@@ -11,7 +11,7 @@ RUN mkdir -p /usr/share/man/man1mkdir -p /usr/share/man/man1
 RUN apt-get install libpng-dev -y;
 # RUN apt-get install libpng-dev wkhtmltopdf -y;
 RUN apt-get install wget libfontenc1 xfonts-75dpi xfonts-base xfonts-encodings xfonts-utils openssl build-essential libssl-dev libxrender-dev git-core libx11-dev libxext-dev libfontconfig1-dev libfreetype6-dev fontconfig libjpeg62-turbo -y;
-RUN apt-get install graphicsmagick-imagemagick-compat;
+RUN apt-get install graphicsmagick-imagemagick-compat -y;
 RUN wget https://github.com/wkhtmltopdf/wkhtmltopdf/releases/download/0.12.5/wkhtmltox_0.12.5-1.stretch_amd64.deb;
 RUN dpkg -i wkhtmltox_0.12.5-1.stretch_amd64.deb;
 RUN echo "date.timezone = Europe/Berlin" >> $PHP_INI_DIR/php.ini
