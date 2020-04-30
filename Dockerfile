@@ -16,6 +16,11 @@ RUN wget https://github.com/wkhtmltopdf/wkhtmltopdf/releases/download/0.12.5/wkh
 RUN dpkg -i wkhtmltox_0.12.5-1.stretch_amd64.deb;
 RUN echo "date.timezone = Europe/Berlin" >> $PHP_INI_DIR/php.ini
 RUN echo "error_reporting = E_ALL & ~E_NOTICE & ~E_STRICT" >> $PHP_INI_DIR/php.ini
+RUN echo "upload_max_filesize = 100M" >> $PHP_INI_DIR/php.ini
+RUN echo "post_max_size = 100M" >> $PHP_INI_DIR/php.ini
+RUN echo "max_execution_time = 300" >> $PHP_INI_DIR/php.ini
+RUN echo "max_input_time = 600" >> $PHP_INI_DIR/php.ini
+RUN echo "error_reporting = E_ALL & ~E_NOTICE & ~E_STRICT" >> $PHP_INI_DIR/php.ini
 
 RUN apt-get update && apt-get install -y zlib1g-dev libicu-dev g++ pdftk
 RUN docker-php-ext-configure intl
